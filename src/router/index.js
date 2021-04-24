@@ -3,11 +3,11 @@ import Router from 'vue-router'
 import home from '@/components/home'
 import about from '@/components/about'
 import start from '@/components/start'
-import contacts from '@/components/contacts'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -28,17 +28,12 @@ export default new Router({
       path: '/start',
       name: 'start',
       component: start
-    },
-    {
-      path: '/contacts',
-      name: 'contacts',
-      component: contacts
     }
   ]
 })
-// const router = new VueRouter({
-//   mode: 'history',
-//   base: process.env.BASE_URL,
-//   routes
-// })
+ //   const router = new Router({
+ //   mode: 'history',
+ //   base: process.env.BASE_URL,
+ //   routes
+ // })
 
