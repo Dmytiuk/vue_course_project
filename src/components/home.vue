@@ -47,16 +47,5 @@
 </script>
 
 <style lang="scss" scoped>
-  .triangle{
-    width: 700px;
-    height: 700px;
-    border: 50px solid #D1F4DC;
-    position: absolute;
-    left: -50%;
-    z-index: -10;
-    transform: rotate(
-            45deg
-    );
-  }
 
 </style>

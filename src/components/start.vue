@@ -116,7 +116,7 @@
 <script>
 	import download from '@/components/download.vue'
 	export default {
-		name: 'blog',
+		name: 'start',
 		components: {
 			Download: download
 		},

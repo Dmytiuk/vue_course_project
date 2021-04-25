@@ -1,25 +1,28 @@
 <template>
     <header class="header">
         <div class="container">
-<!--            <div> sadasdas</div>-->
             <div class="header__logo">
-                <img src="@/assets/img/logo.png" alt="">
+                <router-link to="/"><img src="@/assets/img/logo.png" alt=""></router-link>
             </div>
-            <nav>
+            <nav id="nav">
                 <ul>
-                    <li><router-link to="/">Головна</router-link></li>
-                    <li><router-link to="/start">Інсталяція</router-link></li>
-                    <li><router-link to="/about">Про нас</router-link></li>
+                    <li><router-link to="/"><p>Головна</p> <div class="header__icon"><img src="@/assets/img/home.svg" alt=""></div></router-link></li>
+                    <li><router-link to="/start"><p>Інсталяція</p><div class="header__icon"><img src="@/assets/img/install.svg" alt=""></div></router-link></li>
+                    <li><router-link to="/about"><p>Про нас</p><div class="header__icon"><img src="@/assets/img/devs.svg" alt=""></div></router-link></li>
                 </ul>
-
             </nav>
+            <Burger/>
         </div>
     </header>
 </template>
 
 <script>
+    import Burger from "@/components/Burger.vue"
     export default {
-        name: 'Header'
+        name: 'Header',
+        components: {
+            Burger
+        }
     }
 </script>
 
@@ -35,11 +38,30 @@
       background: rgb(240,255,252);
       box-shadow: 4px 4px 5px 0px rgba(34, 60, 80, 0.2);
       z-index: 9999;
+      @media(max-width: 1024px){
+          height: 35px;
+      }
       &__logo{
           width: 20%;
           img{
               height: auto;
               width: 50px;
+          }
+      }
+      &__icon{
+          width: 35px;
+          height: 35px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50px;
+          background: #3d9c90;
+          box-shadow: 0 0 5px #3d9c90;
+          img{
+              width: 50%;
+          }
+          @media(min-width: 1025px){
+              display: none;
           }
       }
       nav{
@@ -48,16 +70,14 @@
           width: 40%;
           @media(max-width: 1025px){
               position: fixed;
-              top: 0;
-              left: 0;
+              top: 10px;
+              right: 70px;
               justify-content: flex-start;
-              padding: 60px 0 0 2%;
-              width: 40%;
-              height: 100%;
-              transform: translate(-100%,0);
-              transition: .3s;
+              width: fit-content;
+              transform: rotate(-45deg) translate(250px, 0);
+              transition: .4s;
               &.active{
-                  transform: translate(0,0);
+                  transform: rotate(-45deg) translate(0, 0);
               }
           }
           ul{
@@ -66,52 +86,62 @@
               width: 100%;
               height: fit-content;
               @media(max-width: 1025px){
-                  justify-content: flex-start;
+                  justify-content: space-between;
                   flex-direction: column;
                   width: auto;
+                  height: 150px;
               }
               li{
                   font-weight: 600;
                   @media(max-width: 1025px){
-                    margin-bottom: 15%;
+                    transform: rotate(45deg);
+                  }
+                  &:nth-of-type(2){
+                      transform: translate(-30px, -2px);
                   }
                   a{
-                      position: relative;
-                      padding-top: 3px;
-                      padding-bottom: 3px;
-                      color: #3d9c90;
-                      transition: .3s;
-                      &:hover{
-                          color: #00d672;
-                      }
-                      &:after{
-                          position: absolute;
-                          bottom: -2px;
-                          right: 0;
-                          width: 0%;
-                          height: 2px;
-                          content: "";
-                          background-color: #3d9c90;
-                          transition: width .8s cubic-bezier(.22,.61,.36,1);
-                      }
-                      &:before{
-                          position: absolute;
-                          bottom: -2px;
-                          left: 0;
-                          width: 0%;
-                          height: 2px;
-                          content: "";
-                          background-color: #3d9c90;
-                      }
-                      &:hover{
-                          &:before{
-                              width: 100%;
-                              transition: width .5s cubic-bezier(.22,.61,.36,1);
+                      display: block;
+                      p{
+                          position: relative;
+                          padding-top: 3px;
+                          padding-bottom: 3px;
+                          color: #3d9c90;
+                          transition: .3s;
+                          @media(max-width: 1024px){
+                              display: none;
+                          }
+                          &:hover{
+                              color: #00d672;
                           }
                           &:after{
-                              width: 100%;
-                              background-color: transparent;
-                              transition: 0s;
+                              position: absolute;
+                              bottom: -2px;
+                              right: 0;
+                              width: 0%;
+                              height: 2px;
+                              content: "";
+                              background-color: #3d9c90;
+                              transition: width .8s cubic-bezier(.22,.61,.36,1);
+                          }
+                          &:before{
+                              position: absolute;
+                              bottom: -2px;
+                              left: 0;
+                              width: 0%;
+                              height: 2px;
+                              content: "";
+                              background-color: #3d9c90;
+                          }
+                          &:hover{
+                              &:before{
+                                  width: 100%;
+                                  transition: width .5s cubic-bezier(.22,.61,.36,1);
+                              }
+                              &:after{
+                                  width: 100%;
+                                  background-color: transparent;
+                                  transition: 0s;
+                              }
                           }
                       }
                   }

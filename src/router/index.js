@@ -12,21 +12,19 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: home
-    },
-    {
-      path: '/home',
-      name: 'home',
+      meta:{index:0},
       component: home
     },
     {
       path: '/about',
       name: 'about',
+      meta:{index:1},
       component: about
     },
     {
       path: '/start',
       name: 'start',
+      meta:{index:2},
       component: start
     }
   ]
