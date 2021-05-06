@@ -30,6 +30,7 @@
       body{
           margin: 0;
           padding: 0;
+          overflow-x: hidden;
       }
       #app{
         display: flex;
@@ -51,16 +52,25 @@
       h1{
         text-align: center;
         font-size: 6vmin;
+          @media(max-width: 768px){
+              font-size: 9vmin;
+          }
       }
       h2{
         font-size: 5vmin;
         font-weight: 600;
         text-align: center;
         color: #00d672;
+          @media(max-width: 768px){
+              font-size: 8vmin;
+          }
       }
       h3{
         font-size: 5vmin;
         font-weight: 600;
+          @media(max-width: 768px){
+              font-size: 8vmin;
+          }
       }
       p{
         line-height: 1.7;
@@ -118,8 +128,21 @@
           position: relative;
           width: 35%;
           height: 300px;
+
             @media(max-width: 768px){
                 width: 60%;
+                height: 200px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                div{
+                    transform: none!important;
+                    width: 180px;
+                    height: 180px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
             }
         }
       }
@@ -145,7 +168,7 @@
           }
       }
       .page-enter-active, .page-leave-active {
-          transition: opacity 1s, transform .7s;
+          transition: opacity .45s, transform .4s;
       }
       .page-enter, .page-leave-to {
           opacity: 0;

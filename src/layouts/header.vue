@@ -55,7 +55,7 @@
           justify-content: center;
           align-items: center;
           border-radius: 50px;
-          background: #3d9c90;
+          background: #00d672;
           box-shadow: 0 0 5px #3d9c90;
           img{
               width: 50%;
@@ -67,15 +67,15 @@
       nav{
           display: flex;
           justify-content: flex-end;
-          width: 40%;
+          width: 30%;
           @media(max-width: 1025px){
               position: fixed;
-              top: 10px;
+              top: -10px;
               right: 70px;
               justify-content: flex-start;
               width: fit-content;
-              transform: rotate(-45deg) translate(250px, 0);
-              transition: .4s;
+              transform: rotate(110deg) translate(-130px, -120px);
+              transition: all .9s;
               &.active{
                   transform: rotate(-45deg) translate(0, 0);
               }
@@ -89,15 +89,15 @@
                   justify-content: space-between;
                   flex-direction: column;
                   width: auto;
-                  height: 150px;
+                  height: 170px;
               }
               li{
                   font-weight: 600;
                   @media(max-width: 1025px){
                     transform: rotate(45deg);
-                  }
-                  &:nth-of-type(2){
-                      transform: translate(-30px, -2px);
+                      &:nth-of-type(2){
+                          transform: translate(-40px, -4px);
+                      }
                   }
                   a{
                       display: block;

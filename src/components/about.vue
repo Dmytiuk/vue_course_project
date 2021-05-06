@@ -33,7 +33,6 @@
 </script>
 
 <style lang="scss" scoped>
-	@import url('https://use.fontawesome.com/releases/v5.8.2/css/all.css');
 .about{
 	&__inner{
 		display: flex;

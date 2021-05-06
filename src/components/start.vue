@@ -3,7 +3,7 @@
 		<h1>Інсталяція</h1>
 		<h2>Тут зібрана загальна інформація задля корреткного використаня додатку</h2>
 		<section class="section">
-			<kinesis-container style="width: 100%">
+			<kinesis-container  style="width: 100%">
 				<div class="section__inner">
 					<div class="section__description">
 						<h3>Інструкція:</h3>
@@ -89,7 +89,7 @@
 			</kinesis-container>
 		</section>
 		<section class="section">
-			<kinesis-container style="width: 100%">
+			<kinesis-container  style="width: 100%">
 				<div class="section__inner">
 					<div class="section__description">
 						<h3>Налаштування додатку:</h3>
@@ -130,6 +130,7 @@ ul{
 		font-weight: 400;
 		font-size: 3vmin;
 		padding-left: 3%;
+		margin-left: 5%;
 		margin-bottom: 1%;
 		list-style-type: circle;
 		transition: .3s;
@@ -138,6 +139,9 @@ ul{
 			color: #3d9c90;
 			padding-left: 4%;
 			list-style-type: disc;
+		}
+		@media(max-width: 768px){
+			font-size: 4.5vmin;
 		}
 	}
 }
@@ -158,7 +162,10 @@ ul{
 
 	}
 	.instruction{
-		transform: translate(20%, 20%);
+		@media(min-width: 769px){
+			transform: translate(20%, 20%);
+		}
+
 	}
 	@keyframes rotate1 {
 		to{
@@ -170,6 +177,9 @@ ul{
 			li{
 				font-size: 2vmin;
 				margin-left: 5%;
+				@media(max-width: 768px){
+					font-size: 3.2vmin;
+				}
 			}
 		}
 	}
