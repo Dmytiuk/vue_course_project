@@ -9,6 +9,7 @@
                     <li><router-link to="/"><p>Головна</p> <div class="header__icon"><img src="@/assets/img/home.svg" alt=""></div></router-link></li>
                     <li><router-link to="/start"><p>Інсталяція</p><div class="header__icon"><img src="@/assets/img/install.svg" alt=""></div></router-link></li>
                     <li><router-link to="/about"><p>Про нас</p><div class="header__icon"><img src="@/assets/img/devs.svg" alt=""></div></router-link></li>
+                    <li><router-link to="/admin"><p>Адмін</p><div class="header__icon"><img src="@/assets/img/devs.svg" alt=""></div></router-link></li>
                 </ul>
             </nav>
             <Burger/>

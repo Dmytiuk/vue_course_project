@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import home from '@/components/home'
 import about from '@/components/about'
 import start from '@/components/start'
+import admin from '@/components/admin'
 
 Vue.use(Router)
 
@@ -26,6 +27,12 @@ export default new Router({
       name: 'start',
       meta:{index:2},
       component: start
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      meta:{index:2},
+      component: admin
     }
   ]
 })

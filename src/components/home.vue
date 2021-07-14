@@ -1,14 +1,14 @@
 <template>
   <div class="home">
-    <h1>Delta T</h1>
-    <h2>Delta T - це додаток для платформи Android! </h2>
+    <h1>Taco</h1>
+    <h2>{{ info }}</h2>
     <section class="section">
       <kinesis-container>
         <div class="section__inner">
           <div class="section__description">
             <h3>Коротко про головне:</h3>
-            <p>Смартфон з операційною системою Android можна перетворити на IP-камеру для відеоспостереження за об'єктами за допомогою Wi-Fi-з'єднання. У цьому вам допоможе наш додаток Delta T.
-              Delta T - використовує камеру смартфона і робить знімок коли у полі зору камери з'являється будь-який рух. Всі знімки додаток відправляє в Телеграм користувача.</p>
+            <p>Смартфон з операційною системою Android можна перетворити на IP-камеру для відеоспостереження за об'єктами за допомогою Wi-Fi-з'єднання. У цьому вам допоможе наш додаток Taco.
+              Taco - використовує камеру смартфона і робить знімок коли у полі зору камери з'являється будь-який рух. Всі знімки додаток відправляє в Телеграм користувача.</p>
               <Button/>
           </div>
           <div class="section__decoration">
@@ -43,6 +43,16 @@
           components: {
               Button: button
           },
+          data() {
+              return {
+                  info: null
+              };
+          },
+          mounted() {
+              const baseURI = 'https://api.coindesk.com/v1/bpi/currentprice.json'
+              this.$http.get(baseURI)
+                  .then(response => (this.info = response));
+          }
   }
 </script>
 

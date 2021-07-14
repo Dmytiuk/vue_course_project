@@ -1,16 +1,16 @@
 <template>
 	<div class="about">
 		<h1>Про нас</h1>
-		<h2>Розробка Delta T виконана командою із двох розробників</h2>
+		<h2>Розробка Taco виконана командою із двох розробників</h2>
 		<div class="about__inner">
 			<div class="about__block">
 				<div class="about__block-image">
-					<img src="@/assets/img/dev_2.png">
+					<img src="@/assets/img/dev_1.png">
 				</div>
 				<div class="about__block-info">
 					<h3 class="about__block-name">Валентин Дмитрюк</h3>
 					<span class="about__block-spec">JavaScript Dev</span>
-					<p class="about__block-desc">Валентин розробляв ресурс для презинтацї продукту Delta T , та займався створенням логіки для додатку . Веб ресурс створений на базі Vue.js - популярного JS фрейворку для створення динамічних та добре оптимізованих веб-додатків!</p>
+					<p class="about__block-desc">Валентин розробляв ресурс для презинтацї продукту Taco , та займався створенням логіки для додатку . Веб ресурс створений на базі Vue.js - популярного JS фрейворку для створення динамічних та добре оптимізованих веб-додатків!</p>
 				</div>
 			</div>
 			<div class="about__block">
@@ -37,11 +37,18 @@
 	&__inner{
 		display: flex;
 		justify-content: space-between;
+		@media(max-width: 768px){
+			flex-direction: column;
+		}
 	}
 	&__block{
 		display: flex;
 		justify-content: space-between;
 		width: 45%;
+		@media(max-width: 768px){
+			width: 100%;
+			margin-bottom: 5%;
+		}
 		&:nth-of-type(2){
 			flex-direction: row-reverse;
 			text-align: right;
@@ -54,19 +61,31 @@
 		}
 		&-image{
 			width: 45%;
+			@media(max-width: 768px){
+				display: none;
+			}
 			img{
 				max-width: 100%;
 				height: auto;
 			}
 		}
 		&-info{
+			display: flex;
+			flex-direction: column;
 			width: 45%;
+			@media(max-width: 768px){
+				width: 100%;
+			}
 		}
 		&-name{
+			margin: 0 0 30px 0;
 			position: relative;
 			display: inline-block;
-			font-size: 5vmin;
+			font-size: 4.5vmin;
 			transition: .3s;
+			@media(max-width: 768px){
+				font-size: 6.5vmin;
+			}
 			&:after{
 				position: absolute;
 				left: 0;
@@ -84,6 +103,18 @@
 					width: 50%;
 					background: #00d672;
 				}
+			}
+		}
+		&-spec{
+			font-size: 3.5vmin;
+			@media(max-width: 768px){
+				font-size: 5vmin;
+			}
+		}
+		&-desc{
+			font-size: 2.5vmin;
+			@media(max-width: 768px){
+				font-size: 4vmin;
 			}
 		}
 	}

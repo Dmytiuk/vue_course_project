@@ -1,6 +1,8 @@
 <template>
     <div class="download">
-        <div class="download__button">
+        <a id="link" href="http://app.taco-app.tk/program/Taco.apk" download>
+        </a>
+        <div class="download__button" @click="load" >
             <label for="ms-download">
                 <div class="ms-content">
                     <div class="ms-content-inside">
@@ -13,13 +15,19 @@
                 </div>
             </label>
         </div>
-        <p>Delta T v5.0.41 stable.apk</p>
+        <p>Taco v1.2.2 stable.apk</p>
     </div>
 </template>
 
 <script>
     export default {
-        name: "download"
+        name: "download",
+        methods: {
+            load () {
+               setTimeout("document.getElementById('link').click();", 3500);
+                //setTimeout("window.location('http://app.taco-app.tk/program/Taco_signed.apk')", 3500);
+            },
+        }
     }
 </script>
 

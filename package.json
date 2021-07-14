@@ -1,5 +1,5 @@
 {
-  "name": "course_project",
+  "name": "Taco",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@syncfusion/ej2-vue-navigations": "^19.1.57",
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "timers": "^0.1.1",
     "vue": "^2.6.11",
